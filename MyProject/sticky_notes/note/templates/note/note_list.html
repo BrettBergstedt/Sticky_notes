@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Sticky Notes - All notes{% endblock %}
+{% block content %}
+  <h2>Your notes</h2>
+  {% if notes %}
+    <div class="notes">
+      {% for note in notes %}
+        <article class="note">
+          <h3><a href="{% url 'note_detail' pk=note.pk %}">{{ note.title }}</a></h3>
+          <p>{{ note.content|truncatewords:30 }}</p>
+          <div class="actions">
+            <a href="{% url 'note_update' pk=note.pk %}">Edit</a>
+            <a href="{% url 'note_delete' pk=note.pk %}">Delete</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No notes yet. <a href="{% url 'note_create' %}">Add your first one!</a></p>
+  {% endif %}
+{% endblock %}

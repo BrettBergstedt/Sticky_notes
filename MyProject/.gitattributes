@@ -1,0 +1,4 @@
+# Keep the same line endings on every operating system
+* text=auto eol=lf
+*.png binary
+*.sqlite3 binary

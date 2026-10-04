@@ -1,0 +1,94 @@
+======================================================================
+ STICKY NOTES - UNIT TEST REPORT
+======================================================================
+ Date    : 2026-10-04 16:09
+ Python  : 3.12.3
+ Django  : 6.1.1
+ Command : python manage.py test note
+----------------------------------------------------------------------
+ RESULT  : ALL TESTS PASSED  (46 passed, 0 failed)
+ Time    : 2.299 seconds
+======================================================================
+
+SUMMARY BY AREA
+----------------------------------------------------------------------
+ Author Model Test       1 /  1 passed
+ Note Admin Test         3 /  3 passed
+ Note Create View Test   5 /  5 passed
+ Note Delete View Test   5 /  5 passed
+ Note Detail View Test   4 /  4 passed
+ Note Form Test          7 /  7 passed
+ Note List View Test     7 /  7 passed
+ Note Model Test         7 /  7 passed
+ Note Update View Test   5 /  5 passed
+ Note Url Test           2 /  2 passed
+
+
+ALL TESTS
+----------------------------------------------------------------------
+
+AUTHOR MODEL TEST
+  [PASS] str returns the name
+
+NOTE ADMIN TEST
+  [PASS] note and author are registered in the admin
+  [PASS] superuser can open the notes page
+  [PASS] visitor who is not logged in is sent to the login page
+
+NOTE CREATE VIEW TEST
+  [PASS] create page shows an empty form
+  [PASS] invalid post shows the form with an error
+  [PASS] new note can be given an author
+  [PASS] post without a title saves nothing
+  [PASS] valid post creates a note and redirects to the list
+
+NOTE DELETE VIEW TEST
+  [PASS] confirmation page asks before deleting
+  [PASS] deleting a missing note gives 404
+  [PASS] just opening the page does not delete the note
+  [PASS] only the chosen note is deleted
+  [PASS] post deletes the note and redirects to the list
+
+NOTE DETAIL VIEW TEST
+  [PASS] detail of a missing note gives 404
+  [PASS] detail shows created and updated times
+  [PASS] detail uses the right template
+  [PASS] note detail view
+
+NOTE FORM TEST
+  [PASS] form accepts a title of exactly 255 characters
+  [PASS] form has the expected fields
+  [PASS] form is valid with title and content
+  [PASS] form rejects a title longer than 255 characters
+  [PASS] form requires a title
+  [PASS] form requires content
+  [PASS] form save creates a note
+
+NOTE LIST VIEW TEST
+  [PASS] list links to view edit and delete
+  [PASS] list shortens long content
+  [PASS] list shows a message when there are no notes
+  [PASS] list shows every note
+  [PASS] list uses the right templates
+  [PASS] note list view
+  [PASS] page links to the stylesheet
+
+NOTE MODEL TEST
+  [PASS] author is optional
+  [PASS] created at is set automatically
+  [PASS] deleting the author deletes their notes
+  [PASS] note has content
+  [PASS] note has title
+  [PASS] str returns the title
+  [PASS] updated at changes when note is saved
+
+NOTE UPDATE VIEW TEST
+  [PASS] edit page is filled with the current values
+  [PASS] editing a missing note gives 404
+  [PASS] editing does not create a second note
+  [PASS] invalid post leaves the note unchanged
+  [PASS] valid post updates the note and redirects to the list
+
+NOTE URL TEST
+  [PASS] each url is handled by the right view
+  [PASS] url names give the expected paths
